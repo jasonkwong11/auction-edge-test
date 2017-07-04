@@ -2,7 +2,7 @@
 
 ## Installation
 
-To run this simply clone or fork it, run `bundle install`, `rails db:migrate`, `rails s`, then navigate to localhost:3000 in your browser.
+To run this simply clone or fork it, run `bundle install`, `rails db:create`, `rails db:migrate`, `rails s`, then navigate to localhost:3000 in your browser.
 
 ## Usage
 
