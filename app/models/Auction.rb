@@ -3,6 +3,8 @@ require 'roo'
 class Auction < ApplicationRecord
   has_many :vehicles
 
+  validates_presence_of :name, :street_address, :city, :state, :zip
+
   def vehicles_count
     self.vehicles.count
   end
