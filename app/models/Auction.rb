@@ -3,7 +3,26 @@ require 'roo'
 class Auction < ApplicationRecord
   has_many :vehicles
 
+  def vehicles_count
+    self.vehicles.count
+  end
+
+  def total_profit
+    profit = 0
+    self.vehicles.each do |v|
+      profit += (v.winning_bid - v.seller_payout)
+    end
+    profit
+  end
+
+  def average_profit
+    total_profit/vehicles_count
+  end
+
   def self.import(file)
+    
+    self.ensure_csv(file)
+
     csv = Roo::CSV.new(file.path)
     (2..csv.last_row).map do |i|
       if csv.row(i)[0]
@@ -29,5 +48,11 @@ class Auction < ApplicationRecord
         auction.save
       end
     end
+  end
+
+private
+
+  def self.ensure_csv(file)
+    raise StandardError.new("File must be a CSV") if file.path[-3..-1] != "csv"
   end
 end

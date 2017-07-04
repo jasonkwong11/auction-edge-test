@@ -16,7 +16,11 @@
   <div class="auction-index">
     <% @auctions.each do |auction| %>
       <h3><%= auction.name %>, <%= auction.city %></h3>
-      <li>Number of vehicles sold: <%= auction.vehicles.length %></li>
+      <p>
+        <li>Number of vehicles sold: <%= auction.vehicles_count if !!auction.vehicles_count %></li>
+        <li>Total Profit: <%= number_to_currency(auction.total_profit) %></li>
+        <li>Average Profit Per Vehicle: <%= number_to_currency(auction.average_profit) %></li>
+      </p>
     <% end %> 
   </div>
 </div>

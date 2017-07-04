@@ -14,8 +14,8 @@ Here's what your Ruby on Rails application must do:
 
 2.     DONE ... Your app must parse the given file and store the information in a database.
 3.     After upload, your application should output:
-a.     A list of the auctions (name and city)
-b.     The number of vehicles each auction has sold
+a.     DONE... A list of the auctions (name and city)
+b.     DONE ... The number of vehicles each auction has sold
 c.     The total profit the auction made selling those vehicles
           i.          profit = winning_bid - seller_payout
 d.     The average profit the auction made per vehicle.
@@ -24,7 +24,12 @@ d.     The average profit the auction made per vehicle.
 Your application does not need to be aesthetically pleasing, and should be easy to set up and run on either Linux or Mac OS X. It should not require any for-pay software.
 
 Evaluation
-Evaluation of your submission will be based on the following criteria. Additionally, reviewers will attempt to assess your familiarity with standard libraries.  Reviewers will attempt to assess your experience with object-oriented programming based on how you've structured your submission.
+Evaluation of your submission will be based on the following criteria. 
+
+Additionally, reviewers will attempt to assess your familiarity with standard libraries.
+
+Reviewers will attempt to assess your experience with object-oriented programming based on how you've structured your submission.
+
 1.     Did your application fulfill the basic requirements?
 2.     Did you document the method for setting up and running your application?
 3.     Did you follow the instructions for submission?
