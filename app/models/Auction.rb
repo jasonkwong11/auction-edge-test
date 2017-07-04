@@ -53,6 +53,6 @@ class Auction < ApplicationRecord
 private
 
   def self.ensure_csv(file)
-    raise StandardError.new("File must be a CSV") if file.path[-3..-1] != "csv"
+    raise StandardError.new("File must be a CSV. Please go back and try again.") if file.path[-3..-1] != "csv"
   end
 end

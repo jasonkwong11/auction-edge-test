@@ -16,9 +16,9 @@ Here's what your Ruby on Rails application must do:
 3.     After upload, your application should output:
 a.     DONE... A list of the auctions (name and city)
 b.     DONE ... The number of vehicles each auction has sold
-c.     The total profit the auction made selling those vehicles
+c.     DONE ... The total profit the auction made selling those vehicles
           i.          profit = winning_bid - seller_payout
-d.     The average profit the auction made per vehicle.
+d.     DONE ... The average profit the auction made per vehicle.
 
 
 Your application does not need to be aesthetically pleasing, and should be easy to set up and run on either Linux or Mac OS X. It should not require any for-pay software.
