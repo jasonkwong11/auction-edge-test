@@ -1,0 +1,22 @@
+<div class="auction">
+  <div class="auction-header">
+    <h1>Import Auctions with CSV</h1>
+  </div>
+  <div class="flash-message" style="color:blue;">
+    <% if flash[:notice] %>
+      <div class="notice"><%= flash[:notice] %></div>
+    <% end %>
+  </div>
+  <div class="auction-form-csv_import">
+    <%= form_tag import_auctions_path, multipart: true do %>
+      <%= file_field_tag :file %>
+      <%= submit_tag "Import CSV"%>
+    <% end %>
+  </div>
+  <div class="auction-index">
+    <% @auctions.each do |auction| %>
+      <h3><%= auction.name %>, <%= auction.city %></h3>
+      <li>Number of vehicles sold: <%= auction.vehicles.length %></li>
+    <% end %> 
+  </div>
+</div>

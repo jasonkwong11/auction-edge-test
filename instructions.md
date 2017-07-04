@@ -12,12 +12,12 @@ Here's what your Ruby on Rails application must do:
 
   a.) DONE ... An example input file named example_input.csv should accompany this code challenge.
 
-2.     Your app must parse the given file and store the information in a database.
+2.     DONE ... Your app must parse the given file and store the information in a database.
 3.     After upload, your application should output:
 a.     A list of the auctions (name and city)
 b.     The number of vehicles each auction has sold
 c.     The total profit the auction made selling those vehicles
-                                                   i.          profit = winning_bid - seller_payout
+          i.          profit = winning_bid - seller_payout
 d.     The average profit the auction made per vehicle.
 
 

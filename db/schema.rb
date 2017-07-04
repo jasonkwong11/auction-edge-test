@@ -16,12 +16,11 @@ ActiveRecord::Schema.define(version: 20170703215225) do
   enable_extension "plpgsql"
 
   create_table "auctions", force: :cascade do |t|
+    t.string "name"
     t.string "street_address"
     t.string "city"
     t.string "state"
     t.string "zip"
-    t.decimal "winning_bid", precision: 8, scale: 2
-    t.decimal "seller_payout", precision: 8, scale: 2
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -32,6 +31,8 @@ ActiveRecord::Schema.define(version: 20170703215225) do
     t.string "model"
     t.integer "stock_number"
     t.string "description"
+    t.decimal "winning_bid", precision: 8, scale: 2
+    t.decimal "seller_payout", precision: 8, scale: 2
     t.bigint "auction_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
