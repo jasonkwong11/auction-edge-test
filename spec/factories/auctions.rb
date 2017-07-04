@@ -6,6 +6,13 @@ FactoryGirl.define do
     state 'WA'
     zip '98101'
 
+    factory :auction_with_vehicles do
+      after(:create) do |auction|
+        create(:vehicle, auction: auction)
+        create(:another_vehicle, auction: auction)
+      end
+    end
+
     factory :unnamed_auction do
       name nil
     end
