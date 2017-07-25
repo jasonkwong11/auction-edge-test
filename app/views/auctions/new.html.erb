@@ -21,7 +21,7 @@
         <%= f.text_field :zip, required: true %><br>
     </fieldset>
     <fieldset>
-      <legend>Vehicle Details</legend>
+      <legend>Vehicle Details (you can add more later) </legend>
     <%= f.fields_for :vehicles do |v| %>
       <%= v.label :year %>
       <%= v.text_field :year %><br>
