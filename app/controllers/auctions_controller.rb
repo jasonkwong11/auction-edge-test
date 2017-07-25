@@ -6,6 +6,8 @@ class AuctionsController < ApplicationController
         @auctions = Auction.by_alphabetical
       elsif params[:sort] == "Most Recent"
         @auctions = Auction.by_most_recent
+      elsif params[:sort] == "Most Vehicles Sold"
+        @auctions = Auction.by_most_vehicles
       end
     else
       @auctions = Auction.all

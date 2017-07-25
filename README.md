@@ -33,3 +33,4 @@ After upload, your application should output:
 - [Done] Feature tests for ^^
 - [Done] Create auctions and at least one vehicle with nested forms
 - [Done] Feature tests ^^
+- [Done] Selectbox to sort auctions alphabetically, most recent first, or most vehicles sold
