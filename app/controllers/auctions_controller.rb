@@ -1,7 +1,15 @@
 class AuctionsController < ApplicationController
 
   def index
-    @auctions = Auction.all
+    if !params[:sort].blank?
+      if params[:sort] == "Alphabetically"
+        @auctions = Auction.by_alphabetical
+      elsif params[:sort] == "Most Recent"
+        @auctions = Auction.by_most_recent
+      end
+    else
+      @auctions = Auction.all
+    end
   end
 
   def import
@@ -27,6 +35,8 @@ class AuctionsController < ApplicationController
   def show
     @auction = Auction.find(params[:id])
   end
+
+
 
 private
 

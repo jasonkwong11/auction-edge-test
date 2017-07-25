@@ -56,6 +56,14 @@ class Auction < ApplicationRecord
     self.vehicles.find_or_initialize_by(vehicles_attributes["0"])
   end
 
+  def self.by_alphabetical
+    order('name ASC')
+  end
+
+  def self.by_most_recent
+    order('created_at DESC')
+  end
+
 private
 
   def self.ensure_csv(file)

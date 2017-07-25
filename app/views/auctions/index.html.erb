@@ -16,6 +16,13 @@
       <%= submit_tag "Import CSV"%>
     <% end %>
   </div>
+  <div>
+    <h3>Sort auctions:</h3>
+    <%= form_tag("/auctions", method: "get") do %>
+      <%= select_tag "sort", options_for_select(["Alphabetically", "Most Recent"]), include_blank: true %>
+      <%= submit_tag "Sort" %>
+    <% end %>
+  </div>
   <div class="auction-index">
     <% @auctions.each do |auction| %>
       <h3><%= link_to auction.name, auction_path(auction.id), id: "auction-title" %>, <%= auction.city %></h3>
