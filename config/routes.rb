@@ -3,5 +3,6 @@ Rails.application.routes.draw do
   root to: 'auctions#index'
   resources :auctions do
     collection { post :import }
+    resources :vehicles
   end
 end

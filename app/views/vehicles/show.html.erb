@@ -1,0 +1,12 @@
+<h1>More details about <%= @vehicle.year_make_model if @vehicle %> </h1>
+
+<div class="vehicle-details">
+  <p>Stock Number: <%= @vehicle.stock_number %></p>
+  <p>Description: <%= @vehicle.description %></p>
+  <p>Winning Bid: <%= number_to_currency(@vehicle.winning_bid) %></p>
+  <p>Seller Payout: <%= number_to_currency(@vehicle.seller_payout) %></p>
+</div>
+
+<%= link_to "Edit Vehicle", edit_auction_vehicle_path, class: 'btn-primary btn-lg' %>
+
+<%= link_to "Delete Vehicle", auction_vehicle_path, method: :delete, class: 'btn-primary btn-lg' %>
