@@ -7,6 +7,9 @@
       <div class="notice"><%= flash[:notice] %></div>
     <% end %>
   </div>
+  <div class="new-auction-link">
+    <%= link_to "New Auction", new_auction_path, class: "btn-primary btn-md" %>
+  </div>
   <div class="auction-form-csv_import">
     <%= form_tag import_auctions_path, multipart: true do %>
       <%= file_field_tag :file %>

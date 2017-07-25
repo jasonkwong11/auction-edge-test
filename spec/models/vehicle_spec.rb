@@ -43,6 +43,13 @@ RSpec.describe Vehicle, type: :model do
         vehicle.seller_payout = "oops"
         expect(vehicle).to be_invalid
       end
+
+      it "should be less than winning_bid" do
+        vehicle.seller_payout = 2
+        vehicle.winning_bid = 1
+
+        expect(vehicle).to be_invalid
+      end
     end
   end
 

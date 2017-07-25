@@ -52,6 +52,10 @@ class Auction < ApplicationRecord
     end
   end
 
+  def vehicles_attributes=(vehicles_attributes)
+    self.vehicles.find_or_initialize_by(vehicles_attributes["0"])
+  end
+
 private
 
   def self.ensure_csv(file)

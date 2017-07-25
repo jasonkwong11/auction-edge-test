@@ -1,0 +1,51 @@
+<h1>Create a new auction!</h1>
+
+<div class="new-auction-form" style="padding-left: 20px">
+  
+  <%= form_for @auction do |f| %>
+    <fieldset>
+      <legend>Auction Details</legend>
+        <%= f.label :name %>
+        <%= f.text_field :name %><br>
+
+        <%= f.label :street_address %>
+        <%= f.text_field :street_address, required: true %><br>
+
+        <%= f.label :city %>
+        <%= f.text_field :city, required: true %><br>
+
+        <%= f.label :state %>
+        <%= f.text_field :state, required: true %><br>
+
+        <%= f.label :zip %>
+        <%= f.text_field :zip, required: true %><br>
+    </fieldset>
+    <fieldset>
+      <legend>Vehicle Details</legend>
+    <%= f.fields_for :vehicles do |v| %>
+      <%= v.label :year %>
+      <%= v.text_field :year %><br>
+
+      <%= v.label :make %>
+      <%= v.text_field :make %><br>
+
+      <%= v.label :model %>
+      <%= v.text_field :model %><br>
+
+      <%= v.label :stock_number %>
+      <%= v.text_field :stock_number %><br>
+
+      <%= v.label :description %>
+      <%= v.text_field :description %><br>
+
+      <%= v.label :winning_bid %>
+      <%= v.text_field :winning_bid %><br>
+
+      <%= v.label :seller_payout %>
+      <%= v.text_field :seller_payout %><br>
+    <% end %>
+    </fieldset>
+
+    <%= f.submit "Submit" %>
+  <% end %>
+</div>
