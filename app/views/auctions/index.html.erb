@@ -7,15 +7,25 @@
       <div class="notice"><%= flash[:notice] %></div>
     <% end %>
   </div>
+  <div class="new-auction-link">
+    <%= link_to "New Auction", new_auction_path, class: "btn-primary btn-md" %>
+  </div>
   <div class="auction-form-csv_import">
     <%= form_tag import_auctions_path, multipart: true do %>
       <%= file_field_tag :file %>
       <%= submit_tag "Import CSV"%>
     <% end %>
   </div>
+  <div>
+    <h3>Sort auctions:</h3>
+    <%= form_tag("/auctions", method: "get") do %>
+      <%= select_tag "sort", options_for_select(["Alphabetically", "Most Recent", "Most Vehicles Sold"]), include_blank: true %>
+      <%= submit_tag "Sort" %>
+    <% end %>
+  </div>
   <div class="auction-index">
     <% @auctions.each do |auction| %>
-      <h3><%= auction.name %>, <%= auction.city %></h3>
+      <h3><%= link_to auction.name, auction_path(auction.id), id: "auction-title" %>, <%= auction.city %></h3>
       <p>
         <li>Number of vehicles sold: <%= auction.vehicles_count %></li>
         <li>Total Profit: <%= number_to_currency(auction.total_profit) %></li>

@@ -52,6 +52,23 @@ class Auction < ApplicationRecord
     end
   end
 
+  def vehicles_attributes=(vehicles_attributes)
+    self.vehicles.find_or_initialize_by(vehicles_attributes["0"])
+  end
+
+  def self.by_alphabetical
+    order('name ASC')
+  end
+
+  def self.by_most_recent
+    order('created_at DESC')
+  end
+
+  def self.by_most_vehicles
+    @auctions = self.all
+    @auctions = @auctions.sort{|left, right| right.vehicles.count <=> left.vehicles.count}
+  end
+
 private
 
   def self.ensure_csv(file)

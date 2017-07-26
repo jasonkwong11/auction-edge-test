@@ -1,0 +1,24 @@
+<div class="container" style="padding-left: 20px">
+  <div class="header">
+    <h1>Here are the vehicles for <%= @auction.name %></h1>
+  </div>
+  <div class="flash-message" style="color:blue;">
+    <% if flash[:notice] %>
+      <div class="notice"><%= flash[:notice] %></div>
+    <% end %>
+  </div>
+  <div class="new-vehicle-button">
+    <%= link_to "New Vehicle", new_auction_vehicle_path(@auction) %>
+  </div>
+
+  <div class="vehicle-list">
+    <% @auction.vehicles.each do |vehicle| %>
+      <li><%= link_to vehicle.year_make_model, auction_vehicle_path(@auction, vehicle) %>
+        <p>Stock Number: <%= vehicle.stock_number %></p>
+        <p>Description: <%= vehicle.description %></p>
+        <p>Winning Bid: <%= number_to_currency(vehicle.winning_bid) %></p>
+        <p>Seller Payout: <%= number_to_currency(vehicle.seller_payout) %></p>
+      </li>
+    <% end %>
+  </div>
+</div>

@@ -1,0 +1,29 @@
+<div class="form-container" style="padding-left: 20px">
+  <h1>Fill in the Vehicle Form</h1>
+
+  <%= form_for(@vehicle, url: { action: 'update', auction_id: @auction.id}) do |f| %>
+    <%= f.label :year %>
+    <%= f.text_field :year, required: true %><br>
+
+    <%= f.label :make %>
+    <%= f.text_field :make, required: true %><br>
+
+    <%= f.label :model %>
+    <%= f.text_field :model, required: true %><br>
+
+    <%= f.label :stock_number %>
+    <%= f.text_field :stock_number, required: true %><br>
+
+    <%= f.label :description %>
+    <%= f.text_field :description, required: true %><br>
+
+    <%= f.label :winning_bid %>
+    <%= f.text_field :winning_bid, required: true %><br>
+
+    <%= f.label :seller_payout %>
+    <%= f.text_field :seller_payout, required: true %><br>
+
+    <%= f.submit "Submit" %>
+  <% end %>
+</div>
+
